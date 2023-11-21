@@ -141,15 +141,30 @@
 .reply-indicator__header {
   margin-bottom: 5px;
   overflow: hidden;
-
-  & > .account.small {
-    color: $inverted-text-color;
-  }
 }
 
 .reply-indicator__cancel {
   float: right;
   line-height: 24px;
+}
+
+.reply-indicator__display-name {
+  color: $inverted-text-color;
+  display: block;
+  max-width: 100%;
+  line-height: 24px;
+  overflow: hidden;
+  text-decoration: none;
+
+  & > .display-name {
+    line-height: unset;
+    height: unset;
+  }
+}
+
+.reply-indicator__display-avatar {
+  float: left;
+  margin-inline-end: 5px;
 }
 
 .reply-indicator__content {
@@ -308,9 +323,9 @@
     background: darken($ui-secondary-color, 10%);
   }
 
-  > .account,
-  > .emoji,
-  > .autosuggest-hashtag {
+  .autosuggest-account,
+  .autosuggest-emoji,
+  .autosuggest-hashtag {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -342,12 +357,13 @@
     }
   }
 
-  & > .account.small {
-    .display-name {
-      & > span {
-        color: $lighter-text-color;
-      }
-    }
+  .autosuggest-account-icon,
+  .autosuggest-emoji img {
+    margin-inline-end: 8px;
+  }
+
+  .autosuggest-account .display-name > span {
+    color: $lighter-text-color;
   }
 }
 

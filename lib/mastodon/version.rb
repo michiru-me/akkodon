@@ -25,7 +25,7 @@ module Mastodon
     end
 
     def build_metadata
-      ['michiru', ENV.fetch('MASTODON_VERSION_METADATA', nil)].compact_blank.join('.')
+      ['akkodon', ENV.fetch('MASTODON_VERSION_METADATA', nil)].compact_blank.join('.')
     end
 
     def to_a
@@ -44,7 +44,7 @@ module Mastodon
     end
 
     def repository
-      ENV.fetch('GITHUB_REPOSITORY', 'michiru-me/michiru')
+      ENV.fetch('GITHUB_REPOSITORY', 'michiru-me/akkodon')
     end
 
     def source_base_url
@@ -65,7 +65,7 @@ module Mastodon
     end
 
     def user_agent
-      @user_agent ||= "#{HTTP::Request::USER_AGENT} (Michiru/#{Version}; +http#{Rails.configuration.x.use_https ? 's' : ''}://#{Rails.configuration.x.web_domain}/)"
+      @user_agent ||= "#{HTTP::Request::USER_AGENT} (Akkodon/#{Version}; +http#{Rails.configuration.x.use_https ? 's' : ''}://#{Rails.configuration.x.web_domain}/)"
     end
   end
 end
